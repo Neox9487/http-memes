@@ -105,7 +105,7 @@ export function renderDetail(status, prev, next) {
     if (!detailEl) return;
 
     const code = escapeHtml(status.code) + " - " + escapeHtml(status.name);
-    const title = escapeHtml(status.title);
+    const title = status.title ? escapeHtml(status.title) : "(title 還沒填)";
     const cat = escapeHtml(status.category);
     const catText = escapeHtml(categoryLabel(status.category));
 
