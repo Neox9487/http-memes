@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+    border-radius: $radius-md;
+
+    border: 1px solid $border;
+    background: rgba(#fff, 0.02);
+    color: $text;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+
+    &:hover {
+        border-color: $border-2;
+        background: rgba(#fff, 0.04);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:focus-visible {
+        @include focus-ring;
+    }
+
+    &.is-disabled {
+        opacity: 0.45;
+        pointer-events: none;
+    }
+}

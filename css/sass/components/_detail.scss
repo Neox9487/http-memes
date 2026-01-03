@@ -1,0 +1,85 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+#view-detail[hidden],
+#view-list[hidden] {
+    display: none;
+}
+
+.detail {
+    width: min(100%, 980px);
+    margin: 0 auto;
+}
+
+.detail-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-3;
+
+    margin: $space-3 0 $space-4;
+}
+
+.detail-nav {
+    display: flex;
+    gap: $space-2;
+}
+
+.detail-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-4;
+
+    @include media-md {
+        grid-template-columns: 1fr;
+    }
+}
+
+.hero-media {
+    min-height: 360px;
+    border-radius: $radius-xl;
+
+    border: 1px dashed rgba(#fff, 0.18);
+    background: rgba(#000, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-placeholder {
+    font-size: 72px;
+    font-weight: 950;
+    opacity: 0.55;
+}
+
+.hero-code {
+    font-size: 44px;
+    font-weight: 950;
+    letter-spacing: 0.6px;
+}
+
+.hero-title {
+    margin-top: 6px;
+    color: $text-dim;
+    font-size: 18px;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+    margin: $space-3 0 $space-3;
+}
+
+.hero-desc {
+    color: $text-dim;
+    line-height: 1.65;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+    margin-top: $space-3;
+}

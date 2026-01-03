@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($card-min, 1fr));
+    gap: $grid-gap;
+    margin: $space-4 0 $space-6;
+}
