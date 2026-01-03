@@ -1,6 +1,6 @@
 export const STATUSES = [
     /* 1xx Informational */
-    { code: 100, title: "Continue", category: "1xx", description: "", asset: "" },
+    { code: 100, title: "Continue", category: "1xx", description: "請繼續，目前一切正常，伺服器正在等你把話說完", asset: "100" },
     { code: 101, title: "Switching Protocols", category: "1xx", description: "", asset: "" },
     { code: 102, title: "Processing", category: "1xx", description: "", asset: "" },
     { code: 103, title: "Early Hints", category: "1xx", description: "", asset: "" },
