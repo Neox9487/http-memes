@@ -6,7 +6,7 @@ export const STATUSES = [
     { code: 103, name: "Early Hints", title:" 先給你一點提示，完整內容等等就來", category: "1xx", description: "", asset: "103" },
 
     /* 2xx Success */
-    { code: 200, name: "OK", category: "2xx", description: "", asset: "" },
+    { code: 200, name: "OK", title:"任務成功地完成了......嗎?", category: "2xx", description: "", asset: "200" },
     { code: 201, name: "Created", category: "2xx", description: "", asset: "" },
     { code: 202, name: "Accepted", category: "2xx", description: "", asset: "" },
     { code: 203, name: "Non-Authoritative Information", category: "2xx", description: "", asset: "" },
