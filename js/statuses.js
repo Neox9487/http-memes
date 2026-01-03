@@ -1,9 +1,9 @@
 export const STATUSES = [
     /* 1xx Informational */
-    { code: 100, title: "Continue", category: "1xx", description: "請繼續，目前一切正常，伺服器正在等你把話說完", asset: "100" },
-    { code: 101, title: "Switching Protocols", category: "1xx", description: "協議正在切換中，是時候換個人了", asset: "101" },
-    { code: 102, title: "Processing", category: "1xx", description: "", asset: "" },
-    { code: 103, title: "Early Hints", category: "1xx", description: "", asset: "" },
+    { code: 100, title: "Continue\n請繼續，目前一切正常，伺服器正在等你把話說完", category: "1xx", description: "", asset: "100" },
+    { code: 101, title: "Switching Protocols\n協議正在切換中，是時候換個人了", category: "1xx", description: "", asset: "101" },
+    { code: 102, title: "Processing\n請稍候!伺服器正在努力處理資訊中(?", category: "1xx", description: "", asset: "102" },
+    { code: 103, title: "Early Hints\n先給你一點提示，完整內容等等就來", category: "1xx", description: "", asset: "103" },
 
     /* 2xx Success */
     { code: 200, title: "OK", category: "2xx", description: "", asset: "" },
