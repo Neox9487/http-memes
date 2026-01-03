@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+
+.section-title {
+    margin: $space-6 0 $space-3;
+    padding-top: $space-4;
+
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+
+    color: $text;
+
+    border-top: 1px solid $border;
+
+    &:first-of-type {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
