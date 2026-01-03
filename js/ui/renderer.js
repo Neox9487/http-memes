@@ -27,8 +27,8 @@ function createMedia({ asset, code, title }) {
     }
 
     const img = document.createElement("img");
-    
-    img.src = new URL(`../../assets/images/${asset}.jpg`, import.meta.url).href;
+
+    img.src = new URL(`assets/images/${String(asset).trim()}.jpg`, document.baseURI).href;
 
     img.alt = `${code} ${title}`;
     img.loading = "lazy";
@@ -37,7 +37,6 @@ function createMedia({ asset, code, title }) {
 
     return img;
 }
-
 
 export function createStatusCard(status) {
     const a = document.createElement("a");
