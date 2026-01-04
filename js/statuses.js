@@ -7,7 +7,7 @@ export const STATUSES = [
         category: "1xx",
         description:
             "HTTP 100 Continue 是一個資訊性狀態碼，表示「到目前為止一切正常」。" +
-            "伺服器已成功接收到請求標頭，並且願意接收接下來的請求主體(body)。" +
+            "伺服器已成功接收到請求標頭，並且願意接收接下來的請求主體 ( body ) 。" +
             "此狀態碼通常會搭配 `Expect: 100-continue` 標頭使用，讓用戶端在送出大量資料前，先確認伺服器是否願意接受，藉此避免不必要的資料傳輸。",
         asset: "100"
     },
@@ -25,7 +25,7 @@ export const STATUSES = [
     {
         code: 102,
         name: "Processing",
-        title: "請稍候! 伺服器正在努力處理資訊中(?",
+        title: "請稍候! 伺服器正在努力處理資訊中 ( ?",
         category: "1xx",
         description:
             "HTTP 102 Processing 表示伺服器已成功接收到請求，但尚未完成處理。" +
@@ -40,7 +40,7 @@ export const STATUSES = [
         category: "1xx",
         description:
             "HTTP 103 Early Hints 用於在最終回應尚未完成前，提前向用戶端提供一些「提示資訊」。" +
-            "這些提示通常包含瀏覽器即將需要的資源，例如樣式表或 JavaScript 檔案(透過 `Link` 標頭)。" +
+            "這些提示通常包含瀏覽器即將需要的資源，例如樣式表或 JavaScript 檔案 ( 透過 `Link` 標頭 ) 。" +
             "透過提早載入關鍵資源，可以有效減少頁面實際顯示時的等待時間，提升整體效能與使用者體驗。",
         asset: "103"
     },
@@ -115,7 +115,7 @@ export const STATUSES = [
     {
         code: 206,
         name: "Partial Content",
-        title: "留了一部份給你呦 ヽ(･∀･)ﾉ",
+        title: "留了一部份給你呦",
         category: "2xx",
         description:
             "HTTP 206 Partial Content 表示伺服器僅回傳資源的一部分內容。" +
@@ -157,14 +157,83 @@ export const STATUSES = [
     },
 
     /* 3xx Redirection */
-    { code: 300, name: "Multiple Choices", category: "3xx", description: "", asset: "" },
-    { code: 301, name: "Moved Permanently", category: "3xx", description: "", asset: "" },
-    { code: 302, name: "Found", category: "3xx", description: "", asset: "" },
-    { code: 303, name: "See Other", category: "3xx", description: "", asset: "" },
-    { code: 304, name: "Not Modified", category: "3xx", description: "", asset: "" },
-    { code: 305, name: "Use Proxy", category: "3xx", description: "", asset: "" },
-    { code: 307, name: "Temporary Redirect", category: "3xx", description: "", asset: "" },
-    { code: 308, name: "Permanent Redirect", category: "3xx", description: "", asset: "" },
+    {
+        code: 300,
+        name: "Multiple Choices",
+        title: "這很難做出選擇，對吧?",
+        category: "3xx",
+        description:
+            "HTTP 300 Multiple Choices 表示請求的資源有多種可能的回應方式。" +
+            "伺服器會提供多個可選的資源位置或格式，讓用戶端自行決定要使用哪一個。" +
+            "這種狀態碼較少實際使用，通常出現在內容協商或資源有多版本的情境。",
+        asset: "300"
+    },
+    {
+        code: 301,
+        name: "Moved Permanently",
+        title: "他為你指明了路，這裡已經什麼都沒有了",
+        category: "3xx",
+        description:
+            "HTTP 301 Moved Permanently 表示請求的資源已被永久移動到新的位置。" +
+            "伺服器會在回應中提供新的 URL，用戶端與搜尋引擎應更新既有的連結。" +
+            "這是 SEO 中非常重要的狀態碼，代表舊地址正式退役。",
+        asset: "301"
+    },
+    {
+        code: 302,
+        name: "Found",
+        title: "沒有的話，我晚點再來?",
+        category: "3xx",
+        description:
+            "HTTP 302 Found 表示請求的資源暫時位於不同的位置。" +
+            "與 301 不同的是，這種轉址是臨時性的，用戶端不應永久記住新的 URL。" +
+            "常見於登入後導頁、暫時性活動頁面或流量分流。",
+        asset: "302"
+    },
+    {
+        code: 303,
+        name: "See Other",
+        title: "我就在那裡，待會見~",
+        category: "3xx",
+        description:
+            "HTTP 303 See Other 表示請求的結果應透過另一個 URL 取得。" +
+            "通常用於 POST 請求完成後，引導用戶端以 GET 方式取得結果頁面。" +
+            "這能避免重新整理時重複送出表單。",
+        asset: "303"
+    },
+    {
+        code: 304,
+        name: "Not Modified",
+        title: "已經沒有什麼東西可以改變了......",
+        category: "3xx",
+        description:
+            "HTTP 304 Not Modified 表示資源自上次請求後並未發生變化。" +
+            "伺服器不會回傳內容本體，用戶端可直接使用快取版本。" +
+            "這是瀏覽器快取機制的核心之一，可大幅減少流量與載入時間。",
+        asset: "304"
+    },
+    {
+        code: 307,
+        name: "Temporary Redirect",
+        title: "這條路還在，但我不在了",
+        category: "3xx",
+        description:
+            "HTTP 307 Temporary Redirect 表示資源暫時轉移到其他位置。" +
+            "與 302 不同的是，307 明確要求用戶端保留原本的 HTTP 方法 ( 如 POST 仍然是 POST ) 。" +
+            "適合用於對請求語意有嚴格要求的臨時轉址。",
+        asset: "307"
+    },
+    {
+        code: 308,
+        name: "Permanent Redirect",
+        title: "已經走不下去了......",
+        category: "3xx",
+        description:
+            "HTTP 308 Permanent Redirect 表示資源已永久移動到新位置。" +
+            "它的行為類似 301，但同樣要求用戶端保留原始的 HTTP 方法。" +
+            "適合用於 API 或需要嚴格請求一致性的永久轉址場景。",
+        asset: "308"
+    },
 
     /* 4xx Client Error */
     { code: 400, name: "Bad Request", category: "4xx", description: "", asset: "" },
